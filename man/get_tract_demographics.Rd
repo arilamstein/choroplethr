@@ -21,12 +21,6 @@ get_tract_demographics(
 \item{span}{The span of the survey}
 }
 \description{
-The data comes from the American Community Survey (ACS). The variables are: total population, percent White 
-not Hispanic, Percent Black or African American not Hispanic, percent Asian not Hispanic,
-percent Hispanic all races, per-capita income, median rent and median age.
-}
-\references{
-The choroplethr guide to Census data: http://www.arilamstein.com/open-source/choroplethr/mapping-us-census-data/
-
-A list of all ACS Surveys: http://factfinder.census.gov/faces/affhelp/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
+The data comes from the American Community Survey (ACS). The variables are total population
+and median household income.
 }

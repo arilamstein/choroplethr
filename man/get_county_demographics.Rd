@@ -12,22 +12,16 @@ get_county_demographics(endyear = 2013, span = 5)
 \item{span}{The span of the survey}
 }
 \description{
-The data comes from the American Community Survey (ACS). The variables are: total population, percent White 
-not Hispanic, Percent Black or African American not Hispanic, percent Asian not Hispanic,
-percent Hispanic all races, per-capita income, median rent and median age.
+The data comes from the American Community Survey (ACS). The variables are total population
+and median household income.
 }
 \examples{
 \dontrun{
 # get some demographic data on US counties from the 2010 5-year ACS
 df = get_county_demographics(endyear=2010, span=5)
-# a choropleth map shows the location of the values
-# set the 'value' column to be the column we want to render
+# A choropleth map shows the location of the values.
+# Set the 'value' column to be the column we want to render.
 df$value = df$medianHHIncome
 county_choropleth(df)
 }
-}
-\references{
-The choroplethr guide to Census data: http://www.arilamstein.com/open-source/choroplethr/mapping-us-census-data/
-
-A list of all ACS Surveys: http://factfinder.census.gov/faces/affhelp/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
 }
