@@ -1,7 +1,3 @@
-if (base::getRversion() >= "2.15.1") {
-  utils::globalVariables(c("fortify", "inner_join"))
-}
-
 get_state_fips_from_name = function(state_name)
 {
   # Within choroplethr, states are identified by the region column of the state.regions object.
