@@ -16,7 +16,7 @@ Authors@R: c(
     person("Trulia, Inc.", role = c("cph"))
     )
 Maintainer: Zhaochen He <zhaocehn.he@cnu.edu>
-URL: www.choroplethr.com
+URL: https://github.com/arilamstein/choroplethr
 Copyright: Trulia, Inc.
 License: BSD_3_clause + file LICENSE
 Imports:

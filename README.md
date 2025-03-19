@@ -8,7 +8,7 @@ Choroplethr simplifies the creation of choropleth maps in R. Choropleths are the
 
 ## Documentation
 
-Documentation for choroplethr can be found [Choroplethr.com](http://www.Choroplethr.com).
+Documentation for choroplethr can be found [here](https://github.com/arilamstein/choroplethr).
 
 ## Technical Support
 
