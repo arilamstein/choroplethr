@@ -10,3 +10,4 @@ wiki-images
 ^doc$
 ^Meta$
 ^dev$
+^\.github$
