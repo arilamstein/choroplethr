@@ -25,6 +25,14 @@ The data comes from the American Community Survey (ACS). The variables are: tota
 not Hispanic, Percent Black or African American not Hispanic, percent Asian not Hispanic,
 percent Hispanic all races, per-capita income, median rent and median age.
 }
+\examples{
+\dontrun{
+# 36061 is the FIPS code for Manhatttan (technically "New York County"), NY.
+df = get_tract_demographics("new york", 36061)
+df$value = df$medianHHIncome
+tract_choropleth(df, "new york", county_zoom = 36061) 
+}
+}
 \references{
 The choroplethr guide to Census data: http://www.arilamstein.com/open-source/choroplethr/mapping-us-census-data/
 

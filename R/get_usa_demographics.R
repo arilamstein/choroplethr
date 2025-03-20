@@ -28,9 +28,9 @@ get_state_demographics = function(endyear=2013, span=5)
 {  
   span_lookup = c('1' = 'acs1', '3' = 'acs3', '5' = 'acs5')
   dataset = span_lookup[as.character(span)]
-  acs_df = as.data.frame(tidycensus::get_acs(geography = 'state', 
-                                             variable = c('B00001_001', 'B19013_001'), 
-                                             year = endyear, dataset = dataset, output = 'wide'))
+  acs_df = tidycensus::get_acs(geography = 'state', 
+                               variable = c('B00001_001', 'B19013_001'), 
+                               year = endyear, dataset = dataset, output = 'wide')
   acs_df = acs_df[, c(2, 3, 5)]
   names(acs_df) = c('region', 'medianHHIncome', 'population')
   acs_df$region = tolower(acs_df$region)
@@ -64,9 +64,8 @@ get_county_demographics = function(endyear=2013, span=5)
 {  
   span_lookup = c('1' = 'acs1', '3' = 'acs3', '5' = 'acs5')
   dataset = span_lookup[as.character(span)]
-  acs_df = as.data.frame(tidycensus::get_acs(geography = 'county', 
-                                             variable = c('B00001_001', 'B19013_001'), 
-                                             year = endyear, dataset = dataset, output = 'wide'))
+  acs_df = tidycensus::get_acs(geography = 'county', variable = c('B00001_001', 'B19013_001'), 
+                               year = endyear, dataset = dataset, output = 'wide')
   acs_df = acs_df[, c(1, 3, 5)]
   names(acs_df) = c('region', 'medianHHIncome', 'population')
   acs_df$region = tolower(acs_df$region)
@@ -86,16 +85,29 @@ get_county_demographics = function(endyear=2013, span=5)
 #' @param span The span of the survey
 #' @references The choroplethr guide to Census data: http://www.arilamstein.com/open-source/choroplethr/mapping-us-census-data/
 #' @references A list of all ACS Surveys: http://factfinder.census.gov/faces/affhelp/jsf/pages/metadata.xhtml?lang=en&type=survey&id=survey.en.ACS_ACS
+#' @examples
+#' \dontrun{
+#' # 36061 is the FIPS code for Manhatttan (technically "New York County"), NY.
+#' df = get_tract_demographics("new york", 36061)
+#' df$value = df$medianHHIncome
+#' tract_choropleth(df, "new york", county_zoom = 36061) 
+#' }
+#' @importFrom stringr str_sub
 #' @export
 get_tract_demographics = function(state_name, county_fips = NULL, endyear=2013, span=5)
-{  
+{ 
+  # tidycensus::get_acs requires just the *county* portion of the FIPS code
+  # (i.e. the last 3 characters) 
+  if (!is.null(county_fips)) {
+    county_fips = str_sub(county_fips, -3)
+  }
   span_lookup = c('1' = 'acs1', '3' = 'acs3', '5' = 'acs5')
   dataset = span_lookup[as.character(span)]
-  acs_df = as.data.frame(tidycensus::get_acs(geography = 'tract', state = state_name, county=county_fips,
+  acs_df = tidycensus::get_acs(geography = 'tract', state = state_name, county=county_fips,
                                              variable = c('B00001_001', 'B19013_001'), 
-                                             year = endyear, dataset = dataset, output = 'wide'))
+                                             year = endyear, dataset = dataset, output = 'wide')
   acs_df = acs_df[, c(1, 3, 5)]
   names(acs_df) = c('region', 'medianHHIncome', 'population')
-  acs_df$region = tolower(acs_df$region)
+  acs_df$region = as.numeric(acs_df$region)
   return(acs_df)
 }
