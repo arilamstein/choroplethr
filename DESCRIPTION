@@ -1,24 +1,24 @@
 Package: choroplethr
+Type: Package
 Title: Simplify the Creation of Choropleth Maps in R
-Description: Choropleths are thematic maps where geographic regions, such as
-    states, are colored according to some metric, such as the number of people
-    who live in that state. This package simplifies this process by 1.
-    Providing ready-made functions for creating choropleths of common maps. 2.
-    Providing data and API connections to interesting data sources for making
-    choropleths. 3. Providing a framework for creating choropleths from
-    arbitrary shapefiles. 4. Overlaying those maps over reference maps from
-    Google Maps. 
 Version: 4.0.0
 Authors@R: c(
-    person("Ari", "Lamstein", , "ari@lamsteinconsulting.com", c("aut", "cre")),
-    person("Zhaochen", "He", , "zhaochen.he@cnu.edu", role = "aut"),
-    person("Brian", "Johnson", , role = "ctb"),
-    person("Trulia, Inc.", role = c("cph"))
+    person("Ari", "Lamstein", email = "ari@lamsteinconsulting.com", role = c("aut")),
+    person("Zhaochen", "He", email = "zhaochen.he@cnu.edu", role = c("aut", "cre")),
+    person("Ari", "Lamstein", role = c("ctb")),
+    person("Ari", "Lamstein", role = c("cph"))
     )
-Maintainer: Zhaochen He <zhaochen.he@cnu.edu>
+Description: Choropleths are thematic maps where geographic regions, such as
+    states, are colored according to some metric. This package simplifies
+    that process by providing ready-made functions, relevant datasets,
+    and support for Google Maps overlays and arbitrary shapefiles.
+License: BSD_3_clause + file LICENSE
+Encoding: UTF-8
+LazyData: true
 URL: https://github.com/eastnile/choroplethr
 Copyright: Trulia, Inc.
-License: BSD_3_clause + file LICENSE
+Depends:
+    R (>= 3.5.0)
 Imports:
     Hmisc,
     stringr,
@@ -37,10 +37,8 @@ Imports:
 Suggests:
     testthat,
     choroplethrMaps,
-    choroplethrAdmin1 (>= 1.1.0),
-Depends:
-    R (>= 3.5.0)
-Collate: 
+    choroplethrAdmin1 (>= 1.1.0)
+Collate:
     'acs.R'
     'choropleth.R'
     'admin1.R'
@@ -59,4 +57,3 @@ Collate:
     'tract.R'
     'utils.R'
 RoxygenNote: 7.3.2
-Encoding: UTF-8
