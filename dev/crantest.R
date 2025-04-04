@@ -1,4 +1,4 @@
 roxygen2::roxygenize()
 devtools::load_all()
 devtools::document()
-devtools::check()
+devtools::check(cran=TRUE)

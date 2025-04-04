@@ -15,7 +15,7 @@ Authors@R: c(
     person("Brian", "Johnson", , role = "ctb"),
     person("Trulia, Inc.", role = c("cph"))
     )
-Maintainer: Zhaochen He <zhaocehn.he@cnu.edu>
+Maintainer: Zhaochen He <zhaochen.he@cnu.edu>
 URL: https://github.com/eastnile/choroplethr
 Copyright: Trulia, Inc.
 License: BSD_3_clause + file LICENSE
