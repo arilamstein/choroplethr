@@ -104,7 +104,7 @@ Please see the help documentation inside R (e.g. ?country_choroplethr) to learn 
 
 Note: admin1_choropleth() requires the rnaturalearthhires package to be installed.
 This package contains the needed high resolution subcountry maps, but is not
-presently hosted on CRAN due to its large file size. To use admin1_choroplethr,
+presently hosted on CRAN due to its large file size. To use admin1_choropleth,
 please first install the remotes package, then install rnaturalearthhires from
 github:
 
