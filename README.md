@@ -1,3 +1,5 @@
+# Active development of choroplethr is now happening in [this](https://github.com/eastnile/choroplethr) repo.
+---
 # choroplethr
 Master: [![Build Status](https://travis-ci.org/trulia/choroplethr.png?branch=master)](https://travis-ci.org/trulia/choroplethr)
 Dev: [![Build Status](https://travis-ci.org/trulia/choroplethr.png?branch=dev)](https://travis-ci.org/trulia/choroplethr)
