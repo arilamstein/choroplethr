@@ -1,3 +1,5 @@
+# Active development of choroplethr is now happening in [this](https://github.com/eastnile/choroplethr) repo.
+
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/arilamstein/choroplethr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/arilamstein/choroplethr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
